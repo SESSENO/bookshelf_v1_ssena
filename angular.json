@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "f757bc12-49e9-4b51-99c9-ae8ecf20ce0b"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bookshelf_v1_ssena": {
+    "bookshelf-v1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bookshelf_v1_ssena",
+            "outputPath": "dist/bookshelf-v1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bookshelf_v1_ssena:build:production"
+              "browserTarget": "bookshelf-v1:build:production"
             },
             "development": {
-              "browserTarget": "bookshelf_v1_ssena:build:development"
+              "browserTarget": "bookshelf-v1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bookshelf_v1_ssena:build"
+            "browserTarget": "bookshelf-v1:build"
           }
         },
         "test": {
@@ -109,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "bookshelf_v1_ssena"
+  "defaultProject": "bookshelf-v1"
 }

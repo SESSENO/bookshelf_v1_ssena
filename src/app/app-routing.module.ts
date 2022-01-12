@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo:'cdd'},
+  { path: '', redirectTo: 'cdd', pathMatch: 'full' },
   {
     path: 'cdd',
-    loadChildren: () => import('./cdd/cdd.module').then(m => m.CddModule)
-
-  }
+    loadChildren: () => import('./cdd/cdd.module').then((m) => m.CddModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

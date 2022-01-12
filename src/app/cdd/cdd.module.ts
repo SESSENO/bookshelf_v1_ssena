@@ -1,14 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTableModule} from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { NgModule } from '@angular/core';
 
+import { AppMaterialModule } from '../app-compartilhado/app-material/app-material.module';
 import { CddRoutingModule } from './cdd-routing.module';
 import { ClassesComponent } from './classes/classes.component';
-
-
 
 @NgModule({
   declarations: [
@@ -17,10 +12,7 @@ import { ClassesComponent } from './classes/classes.component';
   imports: [
     CommonModule,
     CddRoutingModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule
+    AppMaterialModule
   ]
 })
 export class CddModule { }
