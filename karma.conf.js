@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/bookshelf-v1'),
+      dir: require('path').join(__dirname, './coverage/bookshelf_v1_ssena'),
       subdir: '.',
       reporters: [
         { type: 'html' },
