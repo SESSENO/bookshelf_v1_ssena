@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "bookshelf_v1_ssena:build:production",
+            "firebaseProject": "bookshelfv2-c8551",
+            "firebaseHostingSite": "bookshelfv2-c8551"
+          }
         }
       }
     }
