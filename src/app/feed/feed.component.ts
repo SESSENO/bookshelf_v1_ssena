@@ -36,9 +36,9 @@ export class FeedComponent {
   cards$: Observable<Dashboard[]>;
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private dashService: DashboardService)
+    private dashboardService: DashboardService)
     {
-      this.cards$=dashService.listagemMenu()
+      this.cards$=dashboardService.listagemMenu()
       .pipe(
         catchError(error =>{
           return of([])
