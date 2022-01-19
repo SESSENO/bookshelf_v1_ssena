@@ -1,7 +1,9 @@
+import { AppDialogosComponent } from './../../app-compartilhado/app-dialogos/app-dialogos.component';
 import { GenerosService } from './../service/generos.service';
 import { Component, OnInit } from '@angular/core';
 import { Generos } from '../modelos/generos';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-classes',
@@ -9,13 +11,28 @@ import { Observable } from 'rxjs';
   styleUrls: ['./classes.component.scss'],
 })
 export class ClassesComponent implements OnInit {
-  livroGeneros: Observable <Generos[]>;
+  livrosGeneros$: Observable <Generos[]>;
   visaoColunas = ['_idGenero', 'nomeGenero', 'decimalGenero'];
 
   // constructor(private generosService: GenerosService) { qdo utiliza private a propriedade generosService é indicada como não utilizada.
-  constructor(generosService: GenerosService) {
-    this.livroGeneros = generosService.listagemGeneros();
+  constructor(
+    private generosService: GenerosService,
+    public dialogo: MatDialog
+    ) {
+    this.livrosGeneros$ = generosService.listagemGeneros()
+    .pipe(
+      catchError(error => {
+        this.abrirDialogoErro('Erro ao carregar a tabela: #BS-'+ error.status)
+        return of([])
+      })
+    );
   }
 
+  abrirDialogoErro(erroMsg : string) {
+    this.dialogo.open(AppDialogosComponent), {
+      data:erroMsg
+    }
+
+  }
   ngOnInit(): void {}
 }
