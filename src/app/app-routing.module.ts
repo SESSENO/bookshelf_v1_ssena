@@ -1,22 +1,32 @@
+import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
+import { FeedComponent } from './feed/feed.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FeedComponent } from './feed/feed.component';
+import {redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
+
+
+const enviarSemLOgin = () => redirectUnauthorizedTo(['/app-app-cadastro'])
 
 const routes: Routes = [
-  { path: '', redirectTo: 'feed', pathMatch: 'full' },
-
   {
-    path: 'feed', component: FeedComponent
+    path: '', pathMatch: 'full', redirectTo: 'app-app-cadastro'
   },
-
-  {path: 'cdd',
-  loadChildren: () => import('./cdd/cdd.module').then((c) => c.CddModule)
-},
-
+  {
+    path:'app-app-cadastro', component: AppCadastroComponent
+  },
+  {
+    path: 'feed', component: FeedComponent,
+    ...canActivate(enviarSemLOgin)
+  },
+  {
+    path: 'cdd',
+    loadChildren: () => import('./cdd/cdd.module').then(c => c.CddModule),
+    ...canActivate(enviarSemLOgin)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

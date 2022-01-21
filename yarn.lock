@@ -193,7 +193,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@^12.0.0 || ^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@~13.1.0", "@angular/core@13.1.1":
+"@angular/core@^12.0.0 || ^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@>=13", "@angular/core@>=13.0.0", "@angular/core@~13.1.0", "@angular/core@13.1.1":
   "integrity" "sha512-oLGKgzUbHqte/q7EokOJWUiXAtBjwuZM6c9Or2a7WDJNeImQilxk5qy91RPSbP8FhOBysebqAayrfiCYexlShg=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.1.1.tgz"
   "version" "13.1.1"
@@ -1607,6 +1607,20 @@
   "integrity" "sha512-9oLAnygRMi8Q5QkYEU4XWK04B+nuoXoxjRvRxgjuChkLZFBja0YPSgdZ7dZtwhncLBcQe/I/E+fLuk5qxcYVJA=="
   "resolved" "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-1.0.0.tgz"
   "version" "1.0.0"
+
+"@ngneat/hot-toast@^4.1.0":
+  "integrity" "sha512-5QgxYXAGNmg0J10QjHOBu8Go5SZ9WIg5TDFm60ecMK/BUcuaHB7QeVfY/YFUPsw1iXaO3IVb81w9LdqXz2GNsg=="
+  "resolved" "https://registry.npmjs.org/@ngneat/hot-toast/-/hot-toast-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@ngneat/overview@^3.0.0", "@ngneat/overview@>=3.0.0":
+  "integrity" "sha512-2CpRlxqThQ2TWDYSHc77aM3MwH6DhrRWUZZMOtoKTVLWBv2f1qjCYrSuCpZQLG1bUvOoqMH9CK4xoIIOzx2eYw=="
+  "resolved" "https://registry.npmjs.org/@ngneat/overview/-/overview-3.0.2.tgz"
+  "version" "3.0.2"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "@ngtools/webpack@13.1.2":
   "integrity" "sha512-F/KraxCCUjSn5nWVEQSuyVfnoE9j/bTcpIb+6e38/Hq/saPfsUoNiRjWlTAxCD44vHbMuVkJ/ZRZT6hdICAslw=="
